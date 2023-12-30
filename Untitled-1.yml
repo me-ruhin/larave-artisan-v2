@@ -1,0 +1,22 @@
+/Repositories
+
+    - Contarct Type (CategoryInterface) -> Category -> List, Create, Update, delete, view
+    - Repository Class (CategoryRepository) -> implements (CategoryInterface) List, Create, Update, delete, view
+    - Controller -> Repository ( Dependency Injection )
+    -> singel Instance -> Another Instance
+    -> Interface Binding
+        -> App Service Provider
+            -> $this->app->bind(CategoryInterface::class, CategoryRepository::class)
+
+    class Product {
+        public $category;
+        __construct( Category $category(new Product) ){
+            $this->category = $category
+        }
+
+    }
+
+
+HMVC
+
+
