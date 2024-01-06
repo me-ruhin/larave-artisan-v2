@@ -1,0 +1,63 @@
+=> Services: (category, subcategory, brand, unit, product, stock, sales(order), users)
+=> Permission
+    => category (crud) =>(category.add, category.edit. category.view, category.delete)
+    => subCategory (crud) =>(subcategory.add, subcategory.edit. subcategory.view, subcategory.delete)
+    => brand (crud) =>(brand.add, brand.edit. brand.view, brand.delete)
+    => unit (crud) =>(unit.add, unit.edit. unit.view, unit.delete)
+    => product (crud) =>(product.add, product.edit. product.view, product.delete)
+    => stock (crud) =>(stock.add, stock.edit. stock.view, stock.delete)
+    => sales (crud) =>(sales.add, sales.edit. sales.view, sales.delete)
+    => users (crud) =>(users.add, users.edit. users.view, users.delete)
+    => roles (crud) =>(roles.add, roles.edit. roles.view, roles.delete)
+
+
+
+=> Role
+# Administrator
+    => Manager ()
+    => Delivery Boy
+    => Admin
+    => Account Manager
+
+#user/Customer
+
+Roles vs Permissions (Many to Many) -> Pivot table (singular)-> permission_role (migration)
+
+roles and permissons
+
+roles - table
+permissions - table
+
+=> Pivot table
+role_id  permission_id (sql) (permission_name)
+
+1    1
+1    2
+1    4
+
+-> attach()
+-> sync()
+-> detach()
+
+auth()->user()->role->permissions
+
+roles:(noSql)
+id name permissions []
+
+1 manager ['product.view',]
+
+users
+name role_id
+xyz 1
+
+# Role Create
+
+# Data insert in pivot table  : (permission_role)
+
+
+
+# Home work
+1. static permission settings
+2. Role Create
+3. Manage relationship between Role , Permission
+4. add extra filed in pivot table named permission_name

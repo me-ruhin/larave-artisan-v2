@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\PostController;
 use App\Http\Controllers\API\AuthenticationController;
 use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\PermissionController;
 use App\Http\Controllers\API\UserController;
 
 /*
@@ -44,4 +45,7 @@ Route::group(['prefix'=>'v1'],function(){
     Route::get("/categories/{id}",[CategoryController::class,'find']);
     Route::put("/categories/{id}",[CategoryController::class,'update']);
     Route::delete("/categories/{id}",[CategoryController::class,'destroy']);
+    Route::get("/permissions",[PermissionController::class,'index']);
+    Route::post("/permissions",[PermissionController::class,'create']);
+
 });
