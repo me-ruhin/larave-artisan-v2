@@ -10,15 +10,17 @@ use Log;
 
 class AuthenticationController extends Controller
 {
-    private $authService;
+    private $authService; // DI
 
-    public function __construct(AuthService $authService){
+    public function __construct(AuthService $authService)
+    {
         $this->authService = $authService;
     }
 
-    public function login(loginRequest $request){
+    public function login(loginRequest $request)
+    {
         $user =  $this->authService->isUserExists($request->email, $request->password);
-         
-        return response( $user);
+
+        return response($user);
     }
 }
